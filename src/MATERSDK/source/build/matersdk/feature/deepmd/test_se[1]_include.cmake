@@ -1,0 +1,5 @@
+if(EXISTS "/data/home/liuhanyu/hyliu/code1/lammps_pw/src/MATERSDK/source/build/matersdk/feature/deepmd/test_se[1]_tests.cmake")
+  include("/data/home/liuhanyu/hyliu/code1/lammps_pw/src/MATERSDK/source/build/matersdk/feature/deepmd/test_se[1]_tests.cmake")
+else()
+  add_test(test_se_NOT_BUILT test_se_NOT_BUILT)
+endif()

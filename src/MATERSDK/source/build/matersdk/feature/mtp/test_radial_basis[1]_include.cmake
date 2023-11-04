@@ -1,0 +1,5 @@
+if(EXISTS "/data/home/liuhanyu/hyliu/code1/lammps_pw/src/MATERSDK/source/build/matersdk/feature/mtp/test_radial_basis[1]_tests.cmake")
+  include("/data/home/liuhanyu/hyliu/code1/lammps_pw/src/MATERSDK/source/build/matersdk/feature/mtp/test_radial_basis[1]_tests.cmake")
+else()
+  add_test(test_radial_basis_NOT_BUILT test_radial_basis_NOT_BUILT)
+endif()

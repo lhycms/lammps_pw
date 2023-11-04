@@ -193,11 +193,23 @@ else()
   unset(CMAKE_CXX_CLANG_TIDY CACHE)
 endif()
 
+
+####################################################
+execute_process(COMMAND python3 -c "import torch; print(torch.__path__[0])" OUTPUT_VARIABLE TORCH_PATH) ### torch
+string(REPLACE "\n" "" TORCH_CMAKE_PREFIX_PATH ${TORCH_PATH})  ### torch
+list(APPEND CMAKE_PREFIX_PATH ${TORCH_CMAKE_PREFIX_PATH}) ### torch
+find_package(Torch CONFIG REQUIRED) ### torch
+list(APPEND CMAKE_CXX_FLAGS ${TORCH_CXX_FLAGS}) ### torch
+include("${CMAKE_CURRENT_SOURCE_DIR}/../src/MATERSDK/cmake/matersdk.cmake") ### matersdk
+
+
 include(GNUInstallDirs)
 file(GLOB ALL_SOURCES CONFIGURE_DEPENDS ${LAMMPS_SOURCE_DIR}/[^.]*.cpp)
 file(GLOB MAIN_SOURCES CONFIGURE_DEPENDS ${LAMMPS_SOURCE_DIR}/main.cpp)
 list(REMOVE_ITEM ALL_SOURCES ${MAIN_SOURCES})
 add_library(lammps ${ALL_SOURCES})
+target_include_directories(lammps PUBLIC ${MATERSDK_INCLUDE_DIRS})
+target_link_libraries(lammps PUBLIC ${TORCH_LIBRARIES} ${MATERSDK_LIBRARIES})
 
 # tell CMake to export all symbols to a .dll on Windows with MinGW cross-compilers
 if(BUILD_SHARED_LIBS AND (CMAKE_SYSTEM_NAME STREQUAL "Windows") AND CMAKE_CROSSCOMPILING)

@@ -1,0 +1,5 @@
+add_test([=[NeighborListTest.assign_dR_neigh]=]  /data/home/liuhanyu/hyliu/code1/lammps_pw/src/MATERSDK/source/build/bin/matersdk/io/publicLayer/test_neighborList_lmp [==[--gtest_filter=NeighborListTest.assign_dR_neigh]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[NeighborListTest.assign_dR_neigh]=]  PROPERTIES WORKING_DIRECTORY /data/home/liuhanyu/hyliu/code1/lammps_pw/src/MATERSDK/source/build/matersdk/io/publicLayer SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[NeighborListTest.assign_list_neigh4fortran]=]  /data/home/liuhanyu/hyliu/code1/lammps_pw/src/MATERSDK/source/build/bin/matersdk/io/publicLayer/test_neighborList_lmp [==[--gtest_filter=NeighborListTest.assign_list_neigh4fortran]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[NeighborListTest.assign_list_neigh4fortran]=]  PROPERTIES WORKING_DIRECTORY /data/home/liuhanyu/hyliu/code1/lammps_pw/src/MATERSDK/source/build/matersdk/io/publicLayer SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  test_neighborList_lmp_TESTS NeighborListTest.assign_dR_neigh NeighborListTest.assign_list_neigh4fortran)

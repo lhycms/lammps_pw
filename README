@@ -51,3 +51,20 @@ You can also create these doc pages locally:
 % cd doc
 % make html                # creates HTML pages in doc/html
 % make pdf                 # creates Manual.pdf
+
+
+
+----------------------------------------------------------------------
+Compile `MaterSDK` to lammps
+```shell
+# 1. Copy source code to lammps and compile `MaterSDK`
+$ mkdir <your_path_to_lammps>/lammps/src/MATERSDK
+$ cd <your_path_to_lammps>/lammps/src/MATERSDK/source/build; cmake -DBUILD_TEST=1 -DTORCH_OP=1 ..; make
+
+# 2. Modify <your_path_to_lammps>/lammps/cmake/CMakeList.txt
+# The rows have been modified. We added `### torch` or `### matersdk` at the end of these rows.
+# You can use it directly.
+
+# 3. Compile lammps
+$ mkdir <your_path_to_lammps>/build; cd <your_path_to_lammps>/build; cmake ../cmake; make; make install 
+```

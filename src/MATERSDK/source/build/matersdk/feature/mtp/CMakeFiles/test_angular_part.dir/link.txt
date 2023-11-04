@@ -1,0 +1,1 @@
+/opt/rh/devtoolset-7/root/usr/bin/c++ -rdynamic CMakeFiles/test_angular_part.dir/tests/test_angular_part.cc.o -o ../../../bin/matersdk/feature/mtp/test_angular_part  ../../../lib/libgtest.a ../../../lib/libgtest_main.a ../../../lib/libgtest.a -lpthread 

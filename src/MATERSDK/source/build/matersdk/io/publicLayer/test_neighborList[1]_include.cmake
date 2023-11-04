@@ -1,0 +1,5 @@
+if(EXISTS "/data/home/liuhanyu/hyliu/code1/lammps_pw/src/MATERSDK/source/build/matersdk/io/publicLayer/test_neighborList[1]_tests.cmake")
+  include("/data/home/liuhanyu/hyliu/code1/lammps_pw/src/MATERSDK/source/build/matersdk/io/publicLayer/test_neighborList[1]_tests.cmake")
+else()
+  add_test(test_neighborList_NOT_BUILT test_neighborList_NOT_BUILT)
+endif()
